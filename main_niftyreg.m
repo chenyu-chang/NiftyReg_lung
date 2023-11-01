@@ -8,8 +8,8 @@ ref.feature = fullfile(save_path, 'ref_feature.nii');
 flo.feature = fullfile(save_path, 'flo_feature.nii');
 flo.image = fullfile(save_path, 'flo_image.nii');
 
-mkdir(fullfile(save_path, "reg"))
-save_path = fullfile(save_path, "reg");
+mkdir(fullfile(save_path, 'reg'))
+save_path = fullfile(save_path, 'reg');
 
 %% image registration using feature
 system(['reg_aladin -ref ', ref.feature, ' -flo ', flo.feature, ' -res ', save_path, '/ref_Ref_feature_flo_Flt_feature_affine_result.nii -aff ', save_path, '/ref_Ref_feature_flo_Flt_feature_affine_matrix.txt'])
@@ -21,3 +21,11 @@ system(['reg_resample -ref ', ref.feature, ' -flo ', flo.image, ' -res ', save_p
 
 %% control point
 % system(['reg_resample -ref ', ref_feature_path, ' -flo ', control_point_path, ' -res ', save_path, '/  propagated_cp_flt_dilate.nii -trans ', save_path, '/ref_Ref_feature_flo_Flt_feature_nrr_cpp.nii -inter 0'])
+
+    
+%% show registration result
+cd(save_path)
+cd("..")
+ref_image = niftiread("ref_image.nii");
+propagated_flt_img = niftiread("reg/propagated_Flt_image.nii");
+overlayVolume(ref_image, propagated_flt_img)
