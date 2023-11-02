@@ -1,6 +1,6 @@
 # Lung CT Registration
 
-Implementation of lung CT registration based on the paper "A multichannel feature-based approach for longitudinal lung CT registration in the presence of radiation induced lung damage." This codebase utilizes the [Pulmonary Toolkit](https://github.com/tomdoel/pulmonarytoolkit) and [NiftyReg](http://cmictig.cs.ucl.ac.uk/wiki/index.php/NiftyReg) for image processing and registration.
+Implementation of lung CT registration based on the paper [A multichannel feature-based approach for longitudinal lung CT registration in the presence of radiation induced lung damage.](https://iopscience.iop.org/article/10.1088/1361-6560/ac1b1d) This codebase utilizes the [Pulmonary Toolkit](https://github.com/tomdoel/pulmonarytoolkit) and [NiftyReg](http://cmictig.cs.ucl.ac.uk/wiki/index.php/NiftyReg) for image processing and registration.
 
 ## Prerequisites
 
